@@ -3,15 +3,26 @@ price_apple = 10000
 price_orange = 15000
 price_grape = 20000
 
-# Create user input 
-amount_apple = input("Masukkan jumlah apel: ")
-amount_orange = input("Masukkan jumlah jeruk: ")
-amount_grape = input("Masukkan jumlah anggur: ")
+# Stock Feature
+stock_apple = 30
+stock_orange = 40
+stock_grape = 50
 
-# Convert user input to integer
-amount_apple = int(amount_apple)
-amount_orange = int(amount_orange)
-amount_grape = int(amount_grape)
+# While condition
+amount_apple = int(input("Masukkan jumlah apel: "))
+while amount_apple > stock_apple: # while itu  pasti berjalan sekali dulu sebelum  keluar iterasi
+    print("Jumlah yang dimasukkan terlalu banyak")
+    amount_apple = int(input("Masukkan jumlah apel: "))
+    
+amount_orange = int(input("Masukkan jumlah jeruk: "))
+while amount_orange > stock_orange: # while itu  pasti berjalan sekali dulu sebelum  keluar iterasi
+    print("Jumlah yang dimasukkan terlalu banyak")
+    amount_orange = int(input("Masukkan jumlah jeruk: "))
+
+amount_grape = int(input("Masukkan jumlah anggur: "))
+while amount_grape > stock_grape: # while itu  pasti berjalan sekali dulu sebelum  keluar iterasi
+    print("Jumlah yang dimasukkan terlalu banyak")
+    amount_grape = int(input("Masukkan jumlah anggur: "))
 
 # Calculate price
 price_apple_total = price_apple * amount_apple
@@ -32,11 +43,18 @@ yangDibayar = int(input("Masukkan jumlah uang: "))
 total_beli = price_apple_total + price_orange_total + price_grape_total
 
 # Condiiton 1 2 dan 3
-if yangDibayar < total_beli:
+
+# while yg dibayar > total beli
+# selisih kurang bayar = total beli - yang dibayar
+# print(f"Uang kurang sebesar {selisih kurang bayar})
+# yangDibayar = int(input("Masukkan jumlah uang: "))
+
+while yangDibayar < total_beli:
     selisih_kurang_bayar = total_beli - yangDibayar
-    print("Transaksi anda dibatalkan")
     print(f"Uang kurang sebesar {selisih_kurang_bayar}")
-elif yangDibayar == total_beli:
+    yangDibayar = int(input("Masukkan jumlah uang: "))
+
+if yangDibayar == total_beli:
     print("Terima kasih")
 else:
     lebih_bayar = yangDibayar - total_beli
